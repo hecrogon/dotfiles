@@ -33,11 +33,12 @@ Plugin 'honza/vim-snippets'
 Plugin 'vimwiki/vimwiki'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'w0rp/ale'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'dense-analysis/ale'
 " Plugin 'elzr/vim-json'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 " Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 
@@ -162,7 +163,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " Vimwiki
-let g:vimwiki_list = [{'path': '~/MEGA/vimwiki/'}]
+let g:vimwiki_list = [{'path': '~/pCloudDrive/vimwiki/'}]
 
 "python with virtualenv support
 py << EOF
@@ -175,10 +176,10 @@ if 'VIRTUAL_ENV' in os.environ:
 EOF
 
 " Python
-let &colorcolumn=join(range(101,101),",")
+let &colorcolumn=join(range(81,81),",")
 
-let g:ale_python_checkers=['flake8']
-let g:ale_python_flake8_args="--max-line-length=100"
-" let g:syntastic_python_flake8_args="--max-line-length=100"
+let b:ale_linters = {'python': ['flake8']}
+let g:ale_python_flake8_args="--max-line-length=79"
+" let g:syntastic_python_flake8_args="--max-line-length=79"
 
 set hlsearch

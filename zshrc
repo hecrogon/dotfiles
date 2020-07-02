@@ -43,7 +43,8 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:~/bin
 
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 
 # Bindings
 bindkey "^P" up-line-or-search
@@ -53,8 +54,7 @@ DEFAULT_USER=hector
 # Virtualenv wrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/develop
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
-export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv2
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source /usr/bin/virtualenvwrapper.sh
 
 # Wine
