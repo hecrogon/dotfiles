@@ -51,12 +51,6 @@ bindkey "^P" up-line-or-search
 
 DEFAULT_USER=hector
 
-# Virtualenv wrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/develop
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-source /usr/bin/virtualenvwrapper.sh
-
 # Wine
 #export WINEDEBUG=-all
 
@@ -66,3 +60,41 @@ export GIT_EDITOR=vim
 # Powerline
 # . /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 alias tmux='TERM=xterm-256color tmux'
+
+
+# VENV
+# usage
+# $ mkvenv myvirtualenv # creates venv under ~/.venv/
+# $ venv myvirtualenv   # activates venv
+# $ deactivate          # deactivates venv
+# $ rmvenv myvirtualenv # removes venv
+
+export VENV_HOME="$HOME/.venv"
+[[ -d $VENV_HOME ]] || mkdir $VENV_HOME
+
+venv() {
+  if [ $# -eq 0 ]
+    then
+      echo "Please provide venv name"
+    else
+      source "$VENV_HOME/$1/bin/activate"
+  fi
+}
+
+mkvenv() {
+  if [ $# -eq 0 ]
+    then
+      echo "Please provide venv name"
+    else
+      python3 -m venv $VENV_HOME/$1
+  fi
+}
+
+rmvenv() {
+  if [ $# -eq 0 ]
+    then
+      echo "Please provide venv name"
+    else
+      rm -r $VENV_HOME/$1
+  fi
+}
