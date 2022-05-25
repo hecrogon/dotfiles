@@ -45,6 +45,8 @@ export PATH=$PATH:~/bin
 
 alias vi='nvim'
 alias vim='nvim'
+alias ls='exa'
+alias cat='bat'
 
 # Bindings
 bindkey "^P" up-line-or-search
