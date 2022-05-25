@@ -29,7 +29,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git fasd)
+plugins=(git fasd web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -55,10 +55,12 @@ DEFAULT_USER=hector
 #export WINEDEBUG=-all
 
 # Git
-export GIT_EDITOR=vim
+export GIT_EDITOR=nvim
 
 # Powerline
-# . /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+powerline-daemon -q
+. /usr/share/powerline/bindings/zsh/powerline.zsh
+
 alias tmux='TERM=xterm-256color tmux'
 
 
