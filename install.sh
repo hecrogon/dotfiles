@@ -1,19 +1,18 @@
 #!/usr/bin/env bash
 set -e
 
-# Resolve repo directory (even if script is run from outside)
+# Resolve the repo path (so it works even if run from elsewhere)
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# List of files to link (add more as needed)
+# Files in repo (without dots)
 FILES=(
-  ".zshrc"
-  ".tmux.conf"
+  "zshrc"
+  "tmux.conf"
 )
 
-# Backup existing files and create symlinks
 for file in "${FILES[@]}"; do
-  target="$HOME/$file"
   source="$REPO_DIR/$file"
+  target="$HOME/.$file"
 
   if [ -L "$target" ]; then
     echo "→ Removing old symlink: $target"
