@@ -45,7 +45,7 @@ export PATH=$PATH:~/bin
 
 alias vi='nvim'
 alias vim='nvim'
-alias ls='exa'
+alias ls='eza'
 alias cat='bat'
 
 # Bindings
@@ -54,7 +54,7 @@ bindkey "^P" up-line-or-search
 DEFAULT_USER=hector
 
 # Wine
-#export WINEDEBUG=-all
+# export WINEDEBUG=-all
 
 # Git
 export GIT_EDITOR=nvim
@@ -65,6 +65,8 @@ powerline-daemon -q
 
 alias tmux='TERM=xterm-256color tmux'
 
+# TMUXP
+export DISABLE_AUTO_TITLE='true'
 
 # VENV
 # usage
@@ -102,3 +104,10 @@ rmvenv() {
       rm -r $VENV_HOME/$1
   fi
 }
+
+# LUA
+export LUA_PATH="$HOME/.luarocks/share/lua/5.4/?.lua;$HOME/.luarocks/share/lua/5.4/?/init.lua;$LUA_PATH"
+export LUA_CPATH="$HOME/.luarocks/lib/lua/5.4/?.so;$LUA_CPATH"
+
+# AWS
+alias assume="source assume"
