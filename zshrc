@@ -29,7 +29,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git fasd web-search)
+plugins=(git fasd web-search fzf kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,3 +111,9 @@ export LUA_CPATH="$HOME/.luarocks/lib/lua/5.4/?.so;$LUA_CPATH"
 
 # AWS
 alias assume="source assume"
+
+# AI
+alias aiserver='llama-swap -config ~/.llamaswpcfg -listen 0.0.0.0:8081 -watch-config'
+alias aisearch='docker start searxng'
+alias aiweb='docker start open-webui'
+alias aianythingllm='docker start anythingllm'
